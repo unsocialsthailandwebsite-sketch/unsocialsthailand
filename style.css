@@ -2242,7 +2242,13 @@ html[lang="th"] .ft-col-more.is-expanded + .ft-more-btn::after { content: 'ด�
   .aic-sub { font-size: 1rem; }
   .aic-title { font-size: 1.25rem; }
   .aic-desc { font-size: 0.9375rem; }
-  .aic-bg-video { display: none; }
+  .aic-bg-video {
+    display: block;
+    opacity: 0.3;
+    height: 480px;
+    right: -20%;
+    top: 120px;
+  }
 }
 
 /* ─── PREMIUM CHARACTER UI ─── */
