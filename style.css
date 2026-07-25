@@ -2073,8 +2073,7 @@ html[lang="th"] .ft-col-more.is-expanded + .ft-more-btn::after { content: 'à¸”à¸
   padding: 80px 6vw 70px;
   position: relative;
   overflow: hidden;
-  content-visibility: auto;
-  contain-intrinsic-size: 0 900px;
+  isolation: isolate;
   min-height: 100svh;
   display: flex;
   align-items: center;
@@ -2086,17 +2085,22 @@ html[lang="th"] .ft-col-more.is-expanded + .ft-more-btn::after { content: 'à¸”à¸
   background: radial-gradient(ellipse at 30% 60%, rgba(232,255,0,0.03) 0%, transparent 60%);
   pointer-events: none;
 }
-.aic-bg-video {
+.aic-bg-video-w {
   position: absolute;
   right: -2%;
   top: 0;
   height: 800px;
-  object-fit: contain;
   z-index: 0;
   mix-blend-mode: screen;
   pointer-events: none;
   filter: contrast(1.15) brightness(1.1);
   transition: opacity 0.3s, height 0.3s;
+}
+.aic-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
 }
 .aic-inner { position: relative; z-index: 1; }
 .aic-header {
@@ -2229,7 +2233,7 @@ html[lang="th"] .ft-col-more.is-expanded + .ft-more-btn::after { content: 'à¸”à¸
   .aic-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 20px; }
   .aic-vid-w { height: 50vh; }
   .aic-card-full .aic-vid-w { height: 40vh; }
-  .aic-bg-video {
+  .aic-bg-video-w {
     opacity: 0.15;
     height: 600px;
     top: 50px;
@@ -2242,9 +2246,9 @@ html[lang="th"] .ft-col-more.is-expanded + .ft-more-btn::after { content: 'à¸”à¸
   .aic-sub { font-size: 1rem; }
   .aic-title { font-size: 1.25rem; }
   .aic-desc { font-size: 0.9375rem; }
-  .aic-bg-video {
+  .aic-bg-video-w {
     display: block;
-    opacity: 0.3;
+    opacity: 0.35;
     height: 480px;
     right: -20%;
     top: 120px;
