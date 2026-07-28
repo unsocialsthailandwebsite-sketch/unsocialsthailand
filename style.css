@@ -3381,6 +3381,18 @@ video {
   backface-visibility: hidden;
 }
 
+/* Global Case Study Story Cards Mobile Stacking */
+@media (max-width: 900px) {
+  .cs-story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .cs-story-card {
+    padding: 24px 20px !important;
+  }
+}
+
+
 
 
 
