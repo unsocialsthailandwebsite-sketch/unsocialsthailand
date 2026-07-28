@@ -3142,6 +3142,21 @@ html[lang="th"] .h-big {
     transform-origin: center center !important;
     margin: 0 auto !important;
   }
+  /* Hamburger button inside nav on mobile */
+  .nham {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1010;
+    outline: none;
+    margin-left: auto !important;
+  }
   #u-right {
     display: flex !important;
     flex-direction: column !important;
