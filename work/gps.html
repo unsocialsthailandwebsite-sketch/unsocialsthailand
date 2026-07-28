@@ -112,7 +112,7 @@ html { scroll-behavior: auto !important; }
 <body>
 <div id="cur"></div><div id="cur2"></div>
 <nav id="nav">
-  <a class="nlogo" href="../index.html"><img src="../assets/logo.png" alt="Unsocials Logo" class="nlogo-img"></a>
+  <a class="nlogo" href="../index.html"><img src="../assets/logo.png" alt="Unsocials Logo" class="nlogo-img" decoding="async"></a>
   <div class="nlinks">
     <a href="../index.html">Home</a>
     <a href="../work.html" style="color:var(--ac)">Work</a>
@@ -191,11 +191,11 @@ html { scroll-behavior: auto !important; }
   <div class="cs-carousel-wrapper cs-reveal">
     <button class="cs-carousel-arrow prev" aria-label="Previous image">←</button>
     <div class="cs-grid">
-      <div class="cs-grid-item cs-reveal-scale cs-d1"><img src="../assets/cases/gps/img1.jpg" alt="GPS Gems 1" loading="lazy"></div>
-      <div class="cs-grid-item cs-reveal-scale cs-d2"><video src="../assets/cases/gps/vid1.mp4" autoplay loop muted playsinline></video></div>
-      <div class="cs-grid-item cs-reveal-scale cs-d3"><video src="../assets/cases/gps/vid2.mp4" autoplay loop muted playsinline></video></div>
-      <div class="cs-grid-item cs-reveal-scale cs-d4"><video src="../assets/cases/gps/vid3.mp4" autoplay loop muted playsinline></video></div>
-      <div class="cs-grid-item cs-reveal-scale cs-d5"><video src="../assets/cases/gps/vid4.mp4" autoplay loop muted playsinline></video></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d1"><img src="../assets/cases/gps/img1.jpg" alt="GPS Gems 1" loading="lazy" decoding="async"></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d2"><video src="../assets/cases/gps/vid1.mp4" autoplay loop muted playsinline preload="none"></video></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d3"><video src="../assets/cases/gps/vid2.mp4" autoplay loop muted playsinline preload="none"></video></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d4"><video src="../assets/cases/gps/vid3.mp4" autoplay loop muted playsinline preload="none"></video></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d5"><video src="../assets/cases/gps/vid4.mp4" autoplay loop muted playsinline preload="none"></video></div>
     </div>
     <button class="cs-carousel-arrow next" aria-label="Next image">→</button>
   </div>

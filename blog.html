@@ -332,7 +332,7 @@ nav{background:rgba(4,4,4,.95)}
 <div id="cur"></div><div id="cur2"></div>
 
 <nav id="nav">
-  <a class="nlogo" href="index.html"><img src="assets/logo.png" alt="Unsocials Logo" class="nlogo-img"></a>
+  <a class="nlogo" href="index.html"><img src="assets/logo.png" alt="Unsocials Logo" class="nlogo-img" decoding="async"></a>
   <div class="nlinks">
     <a href="index.html" data-th="หน้าแรก">Home</a>
     <a href="work.html" data-th="ผลงาน">Work</a>
@@ -386,7 +386,7 @@ nav{background:rgba(4,4,4,.95)}
   <!-- Article 1 -->
   <div class="blog-card" onclick="openBlog('ota')">
     <div class="bc-img-w">
-      <img src="assets/elysium-cover.png" alt="OTA Dependence" class="bc-img">
+      <img src="assets/elysium-cover.png" alt="OTA Dependence" class="bc-img" loading="lazy" decoding="async">
     </div>
     <div class="bc-content">
       <div class="bc-meta" data-th="กลยุทธ์การโรงแรม">Hospitality Strategy</div>
@@ -399,8 +399,8 @@ nav{background:rgba(4,4,4,.95)}
   <!-- Article 2 -->
   <div class="blog-card" onclick="openBlog('ai-content')">
     <div class="bc-img-w">
-      <img src="assets/showcase/2.mp4" style="display:none;" alt="AI Content" class="bc-img"> <!-- fallback if video doesn't play -->
-      <video src="assets/showcase/2.mp4" autoplay="" loop="" muted="" playsinline="" class="bc-img" style="object-fit:cover;height:100%;width:100%"></video>
+      <img src="assets/showcase/2.mp4" style="display:none;" alt="AI Content" class="bc-img" loading="lazy" decoding="async"> <!-- fallback if video doesn't play -->
+      <video src="assets/showcase/2.mp4" autoplay="" loop="" muted="" playsinline="" class="bc-img" style="object-fit:cover;height:100%;width:100%" preload="none"></video>
     </div>
     <div class="bc-content">
       <div class="bc-meta" data-th="เทคโนโลยี AI ครีเอทีฟ">AI Technology</div>
@@ -413,7 +413,7 @@ nav{background:rgba(4,4,4,.95)}
   <!-- Article 3 -->
   <div class="blog-card" onclick="openBlog('trends')">
     <div class="bc-img-w">
-      <img src="assets/nomads-cover.png" alt="Marketing Trends" class="bc-img">
+      <img src="assets/nomads-cover.png" alt="Marketing Trends" class="bc-img" loading="lazy" decoding="async">
     </div>
     <div class="bc-content">
       <div class="bc-meta" data-th="แนวโน้มตลาดเอเชีย">Market Trends</div>
@@ -433,7 +433,7 @@ nav{background:rgba(4,4,4,.95)}
   </div>
   <div class="ft-g">
     <div>
-      <div class="ft-br"><img src="assets/logo.png" alt="Unsocials Logo" class="ft-logo-img"></div>
+      <div class="ft-br"><img src="assets/logo.png" alt="Unsocials Logo" class="ft-logo-img" loading="lazy" decoding="async"></div>
     </div>
     <div class="ft-col">
       <h5 data-th="บริการ">Services</h5>

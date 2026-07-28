@@ -117,7 +117,7 @@ html { scroll-behavior: auto !important; }
 <body>
 <div id="cur"></div><div id="cur2"></div>
 <nav id="nav">
-  <a class="nlogo" href="../index.html"><img src="../assets/logo.png" alt="Unsocials Logo" class="nlogo-img"></a>
+  <a class="nlogo" href="../index.html"><img src="../assets/logo.png" alt="Unsocials Logo" class="nlogo-img" decoding="async"></a>
   <div class="nlinks">
     <a href="../index.html">Home</a>
     <a href="../work.html" style="color:var(--ac)">Work</a>
@@ -193,7 +193,7 @@ html { scroll-behavior: auto !important; }
 
 <section class="cs-cover-section">
   <div class="cs-cover-wrapper cs-reveal">
-    <video src="../assets/cases/huay-yai/explainer.mp4" autoplay loop muted playsinline poster="../assets/huay-yai-cover.png"></video>
+    <video src="../assets/cases/huay-yai/explainer.mp4" autoplay loop muted playsinline poster="../assets/huay-yai-cover.png" preload="none"></video>
   </div>
 </section>
 
@@ -202,9 +202,9 @@ html { scroll-behavior: auto !important; }
   <div class="cs-carousel-wrapper cs-reveal">
     <button class="cs-carousel-arrow prev" aria-label="Previous video">←</button>
     <div class="cs-grid">
-      <div class="cs-grid-item cs-reveal-scale cs-d1"><video src="../assets/cases/huay-yai/vid1.mp4" autoplay loop muted playsinline></video></div>
-      <div class="cs-grid-item cs-reveal-scale cs-d2"><video src="../assets/cases/huay-yai/vid2.mp4" autoplay loop muted playsinline></video></div>
-      <div class="cs-grid-item cs-reveal-scale cs-d3"><video src="../assets/cases/huay-yai/vid3.mp4" autoplay loop muted playsinline></video></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d1"><video src="../assets/cases/huay-yai/vid1.mp4" autoplay loop muted playsinline preload="none"></video></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d2"><video src="../assets/cases/huay-yai/vid2.mp4" autoplay loop muted playsinline preload="none"></video></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d3"><video src="../assets/cases/huay-yai/vid3.mp4" autoplay loop muted playsinline preload="none"></video></div>
     </div>
     <button class="cs-carousel-arrow next" aria-label="Next video">→</button>
   </div>
