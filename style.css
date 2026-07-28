@@ -2015,13 +2015,16 @@ html[lang="th"] .ft-col-more.is-expanded + .ft-more-btn::after { content: 'ด�
   #nexus-copy p, #nexus-copy .ab-body { font-size: 16px !important; line-height: 1.8; }
   #nexus-copy .sec-h, #nexus-copy .ab-h { font-size: clamp(28px, 8vw, 42px); }
 
-  /* Slower Nexus animations for mobile */
-  .r1 { animation-duration: 40s; }
-  .r2 { animation-duration: 60s; }
-  .r3 { animation-duration: 90s; }
-  .nx-card { width: 85px; padding: 8px; --radius: 120px; }
-  .nx-card > span { font-size: 10px; }
-  .nx-node { --radius: 120px; }
+  /* Slower Nexus animations & compact scale for mobile */
+  .r1 { animation-duration: 40s; width: 90px !important; height: 90px !important; }
+  .r2 { animation-duration: 60s; width: 150px !important; height: 150px !important; }
+  .r3 { animation-duration: 90s; width: 220px !important; height: 220px !important; }
+  .nx-card { width: 72px !important; padding: 5px !important; }
+  .nx-card-inner { padding: 4px !important; min-height: 36px !important; margin-bottom: 4px !important; }
+  .nx-card-bar { height: 2px !important; margin-bottom: 4px !important; }
+  .nx-card-icon { font-size: 10px !important; bottom: 2px !important; right: 2px !important; }
+  .nx-card > span { font-size: 8.5px !important; }
+  .nx-node { width: 6px !important; height: 6px !important; }
 
   /* About section */
   .ab-body { font-size: 16px !important; line-height: 1.8; }
@@ -2233,26 +2236,40 @@ html[lang="th"] .ft-col-more.is-expanded + .ft-more-btn::after { content: 'ด�
   .aic-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 20px; }
   .aic-vid-w { height: 50vh; }
   .aic-card-full .aic-vid-w { height: 40vh; }
+  .aic-header { min-height: auto !important; margin-bottom: 40px !important; }
   .aic-bg-video-w {
-    opacity: 0.15;
-    height: 600px;
-    top: 50px;
-    right: -10%;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    height: 380px !important;
+    margin: 0 auto 30px auto !important;
+    opacity: 1 !important;
+    z-index: 2 !important;
+    display: block !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.6) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+  }
+  .aic-bg-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
   }
 }
 @media(max-width:600px) {
-  #ai-showcase { padding: 80px 24px 60px; }
+  #ai-showcase { padding: 60px 20px 50px !important; }
   .aic-header { margin-bottom: 40px; }
   .aic-sub { font-size: 1rem; }
   .aic-title { font-size: 1.25rem; }
   .aic-desc { font-size: 0.9375rem; }
-  .aic-bg-video-w {
-    display: block;
-    opacity: 0.35;
-    height: 480px;
-    right: -20%;
-    top: 120px;
-  }
 }
 
 /* ─── PREMIUM CHARACTER UI ─── */
@@ -3214,3 +3231,131 @@ html[lang="th"] .h-big {
     padding: 50px 20px !important;
   }
 }
+
+/* Mobile Hero Layout: Compact length, zero empty space */
+@media (max-width: 768px) {
+  #hero {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 85px !important;
+    padding-bottom: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .hero-ui {
+    padding: 0 16px !important;
+    margin-top: 0 !important;
+  }
+  .h-eye {
+    margin-bottom: 8px !important;
+    font-size: 10px !important;
+    letter-spacing: 0.25em !important;
+  }
+  .h-big {
+    font-size: clamp(28px, 8.5vw, 42px) !important;
+    line-height: 0.92 !important;
+  }
+  .h-it {
+    margin: 4px 0 !important;
+    font-size: clamp(1rem, 4vw, 1.35rem) !important;
+  }
+  .hero-ui p {
+    margin-top: 10px !important;
+    font-size: 9.5px !important;
+    letter-spacing: 0.15em !important;
+  }
+  .hero-ctas {
+    margin-top: 16px !important;
+    gap: 10px !important;
+  }
+  .cta-p, .cta-s {
+    font-size: 11px !important;
+    padding: 12px 20px !important;
+  }
+  .reel-tiles {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+    overflow: visible !important;
+  }
+  .reel-tile {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    width: 66px !important;
+    margin: 0 !important;
+    pointer-events: all !important;
+    animation: reelFloatSmall 2.5s ease-in-out infinite alternate !important;
+  }
+  .scroll-hint {
+    display: none !important;
+  }
+}
+
+/* AI Showcase Mobile: Position character video full-length ABOVE heading & merged with background */
+@media (max-width: 900px) {
+  #ai-showcase {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 60px 20px 40px !important;
+    min-height: auto !important;
+  }
+  .aic-bg-video-w {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 480px !important;
+    margin: 0 auto 0 auto !important;
+    opacity: 1 !important;
+    z-index: 5 !important;
+    display: block !important;
+    mix-blend-mode: screen !important;
+    filter: contrast(1.15) brightness(1.1) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+  .aic-bg-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+  .aic-inner {
+    width: 100% !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  .aic-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin-bottom: 32px !important;
+    padding: 0 !important;
+  }
+}
+
+
+
+

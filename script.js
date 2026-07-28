@@ -217,11 +217,11 @@ if(typeof gsap !== 'undefined') {
   var nodes = document.querySelectorAll('.nx-node');
   if(!cards.length) return;
 
-  var radii  = [280, 320, 260, 300, 290];
+  var baseRadii  = [280, 320, 260, 300, 290];
   var angles = [0, 72, 144, 216, 288];
   var speeds = [0.18, -0.12, 0.22, -0.16, 0.14];
   var nodeAngles = [36, 108, 180, 252, 324];
-  var nodeRadii  = [180, 160, 200, 175, 185];
+  var baseNodeRadii  = [180, 160, 200, 175, 185];
 
   function toRad(d){ return d * Math.PI / 180; }
 
@@ -234,18 +234,20 @@ if(typeof gsap !== 'undefined') {
   function tick(){
     requestAnimationFrame(tick);
     if(!isNexusCardVis) return;
+    var w = window.innerWidth;
+    var scale = w <= 480 ? 0.38 : (w <= 768 ? 0.48 : (w <= 1024 ? 0.7 : 1));
     cards.forEach(function(card, i){
       angles[i] += speeds[i];
       var rad = toRad(angles[i]);
-      var cx = radii[i] * Math.cos(rad);
-      var cy = radii[i] * Math.sin(rad);
+      var cx = baseRadii[i] * scale * Math.cos(rad);
+      var cy = baseRadii[i] * scale * Math.sin(rad);
       card.style.transform = 'translate(calc(-50% + '+cx+'px), calc(-50% + '+cy+'px))';
     });
     nodes.forEach(function(node, i){
       nodeAngles[i] += 0.08;
       var rad = toRad(nodeAngles[i]);
-      var cx = nodeRadii[i] * Math.cos(rad);
-      var cy = nodeRadii[i] * Math.sin(rad);
+      var cx = baseNodeRadii[i] * scale * Math.cos(rad);
+      var cy = baseNodeRadii[i] * scale * Math.sin(rad);
       node.style.transform = 'translate(calc(-50% + '+cx+'px), calc(-50% + '+cy+'px))';
     });
   }
