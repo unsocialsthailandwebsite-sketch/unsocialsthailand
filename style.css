@@ -24,9 +24,55 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;o
 @keyframes gr{0%{background-position:0 0}100%{background-position:40px 20px}}
 
 /* PRELOADER */
-#pre{position:fixed;inset:0;background:var(--bg);z-index:999999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+#pre{position:fixed;inset:0;background:var(--bg);z-index:999999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}
 #pre.out{animation:preOut .8s forwards}
 @keyframes preOut{to{opacity:0;visibility:hidden}}
+
+/* Favicon Fill Preloader Icon */
+.pre-icon-wrap {
+  width: 56px;
+  height: 56px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+.pre-icon-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.12;
+  filter: grayscale(100%) brightness(0.5);
+}
+.pre-icon-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  overflow: hidden;
+  transition: height 0.05s linear;
+  display: flex;
+  align-items: flex-end;
+}
+.pre-icon-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(88%) sepia(85%) saturate(1016%) hue-rotate(1deg) brightness(108%) contrast(101%);
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .pre-icon-wrap {
+    width: 46px;
+    height: 46px;
+  }
+  .pre-icon-img {
+    width: 46px;
+    height: 46px;
+  }
+}
 
 /* flip container */
 .pre-flip{height:72px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}

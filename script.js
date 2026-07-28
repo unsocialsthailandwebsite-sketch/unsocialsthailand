@@ -63,7 +63,7 @@ function setLang(lang){
 document.addEventListener('DOMContentLoaded', initLang);
 
 // ─── PRELOADER ───
-var pf=document.getElementById('pf'),pt=document.getElementById('pt'),pct=0;
+var pf=document.getElementById('pf'),pt=document.getElementById('pt'),pfi=document.getElementById('pfi'),pct=0;
 var enEl=document.getElementById('pre-en'),thEl=document.getElementById('pre-th');
 var isEn=true,flipDur=320; // ms per half-flip
 
@@ -101,6 +101,7 @@ if (pf && pt && enEl && thEl) {
       setTimeout(function(){document.getElementById('pre').classList.add('out')},450);
     }
     pf.style.width=pct+'%';
+    if(pfi) pfi.style.height=pct+'%';
   },65);
 }
 
