@@ -3494,48 +3494,48 @@ html[lang="th"] .h-big {
   }
 }
 
-/* Mobile Hero Layout: Compact length, zero empty space */
+/* Mobile Hero Layout: Elongated banner & enlarged floating video reels */
 @media (max-width: 768px) {
   #hero {
     height: auto !important;
-    min-height: auto !important;
-    padding-top: 85px !important;
-    padding-bottom: 24px !important;
+    min-height: 82svh !important;
+    padding-top: 115px !important;
+    padding-bottom: 48px !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     align-items: center !important;
-    gap: 16px !important;
+    gap: 24px !important;
   }
   .hero-ui {
     padding: 0 16px !important;
     margin-top: 0 !important;
   }
   .h-eye {
-    margin-bottom: 8px !important;
-    font-size: 10px !important;
+    margin-bottom: 10px !important;
+    font-size: 10.5px !important;
     letter-spacing: 0.25em !important;
   }
   .h-big {
-    font-size: clamp(28px, 8.5vw, 42px) !important;
+    font-size: clamp(30px, 9vw, 44px) !important;
     line-height: 0.92 !important;
   }
   .h-it {
-    margin: 4px 0 !important;
-    font-size: clamp(1rem, 4vw, 1.35rem) !important;
+    margin: 6px 0 !important;
+    font-size: clamp(1.05rem, 4.2vw, 1.4rem) !important;
   }
   .hero-ui p {
-    margin-top: 10px !important;
-    font-size: 9.5px !important;
+    margin-top: 12px !important;
+    font-size: 10px !important;
     letter-spacing: 0.15em !important;
   }
   .hero-ctas {
-    margin-top: 16px !important;
-    gap: 10px !important;
+    margin-top: 18px !important;
+    gap: 12px !important;
   }
   .cta-p, .cta-s {
-    font-size: 11px !important;
-    padding: 12px 20px !important;
+    font-size: 11.5px !important;
+    padding: 13px 22px !important;
   }
   .reel-tiles {
     position: relative !important;
@@ -3545,8 +3545,8 @@ html[lang="th"] .h-big {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 8px !important;
-    margin-top: 8px !important;
+    gap: 12px !important;
+    margin-top: 10px !important;
     z-index: 5 !important;
     pointer-events: none !important;
     overflow: visible !important;
@@ -3556,7 +3556,7 @@ html[lang="th"] .h-big {
     left: auto !important;
     top: auto !important;
     right: auto !important;
-    width: 66px !important;
+    width: 82px !important;
     margin: 0 !important;
     pointer-events: all !important;
     animation: reelFloatSmall 2.5s ease-in-out infinite alternate !important;
