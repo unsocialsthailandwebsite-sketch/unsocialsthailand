@@ -424,15 +424,46 @@ if(typeof gsap !== 'undefined') {
     });
   }
 
-  // 7. Global Video Optimization
+  // 7. Global Video Optimization & Mobile Auto-Play Management
   if ('IntersectionObserver' in window) {
     var vidObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.play().catch(function(){}); }
-        else { e.target.pause(); }
+        var v = e.target;
+        if (e.isIntersecting) {
+          v.muted = true;
+          v.playsInline = true;
+          v.setAttribute('playsinline', '');
+          v.setAttribute('webkit-playsinline', '');
+          var playPromise = v.play();
+          if (playPromise && playPromise.catch) {
+            playPromise.catch(function(){});
+          }
+        } else {
+          if (!v.paused) {
+            v.pause();
+          }
+        }
       });
-    }, { rootMargin: '100px' });
-    document.querySelectorAll('video').forEach(function(v) { vidObs.observe(v); });
+    }, { rootMargin: '150px 0px' });
+
+    var observeAllVideos = function() {
+      document.querySelectorAll('video').forEach(function(v) {
+        v.muted = true;
+        v.playsInline = true;
+        v.setAttribute('playsinline', '');
+        v.setAttribute('webkit-playsinline', '');
+        vidObs.observe(v);
+      });
+    };
+
+    observeAllVideos();
+
+    if ('MutationObserver' in window) {
+      var mutObs = new MutationObserver(function() {
+        observeAllVideos();
+      });
+      mutObs.observe(document.body, { childList: true, subtree: true });
+    }
   }
 
 })();
