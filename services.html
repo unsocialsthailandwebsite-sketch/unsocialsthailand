@@ -339,15 +339,75 @@ nav{background:rgba(4,4,4,.95)}
   .svc-right { width: 220px; height: 220px; }
 }
 
-/* ── Tablet / Mobile ── */
+/* ── Tablet / Mobile Responsiveness ── */
 @media(max-width: 900px) {
   .svc-global-menu { display: none !important; }
   .svc-menu-col { display: none !important; }
-  .svc-card { min-height: auto !important; position: relative !important; margin-bottom: 24px !important; }
-  .svc-card-inner { grid-template-columns: 1fr !important; padding: 50px 24px !important; gap: 30px !important; border-radius: 20px !important; border: 1px solid rgba(255,255,255,0.08) !important; max-width: 100% !important; }
-  .svc-right { width: 120px !important; height: 120px !important; margin: 0 auto !important; }
-  .ph { padding: 120px 24px 48px !important; }
-  .svc-deck { padding: 0 24px !important; height: auto !important; }
+  .ph { padding: 95px 20px 32px !important; }
+  .ph-h { font-size: clamp(26px, 7.5vw, 38px) !important; line-height: 0.95 !important; word-break: break-word !important; }
+  .ph-sub { font-size: 14px !important; max-width: 100% !important; }
+  
+  .svc-deck { padding: 0 16px !important; width: 100% !important; max-width: 100vw !important; box-sizing: border-box !important; }
+  .svc-card { min-height: auto !important; position: relative !important; margin-bottom: 20px !important; width: 100% !important; }
+  .svc-card-inner {
+    grid-template-columns: 1fr !important;
+    padding: 24px 16px !important;
+    gap: 20px !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .svc-left {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+  }
+  .svc-title {
+    font-size: clamp(20px, 6vw, 30px) !important;
+    line-height: 1.05 !important;
+    margin-bottom: 12px !important;
+    word-break: break-word !important;
+  }
+  .svc-desc-container, .svc-desc {
+    max-width: 100% !important;
+    font-size: 13.5px !important;
+    line-height: 1.6 !important;
+  }
+  .svc-deliverables {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .svc-target-txt {
+    font-size: 13px !important;
+  }
+  .svc-outcomes-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin-top: 14px !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .svc-right {
+    width: 100% !important;
+    max-width: 220px !important;
+    height: 160px !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media(max-width: 480px) {
+  .svc-outcomes-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .svc-card-inner {
+    padding: 20px 14px !important;
+  }
 }
 
 /* ── PRICING SECTION ── */

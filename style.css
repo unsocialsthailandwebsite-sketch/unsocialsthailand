@@ -3356,6 +3356,23 @@ html[lang="th"] .h-big {
   }
 }
 
+/* Global Mobile Page Hero (.ph) Responsiveness */
+@media (max-width: 768px) {
+  .ph {
+    padding: 95px 20px 32px !important;
+  }
+  .ph-h {
+    font-size: clamp(26px, 7.5vw, 38px) !important;
+    line-height: 0.95 !important;
+    word-break: break-word !important;
+  }
+  .ph-sub {
+    font-size: 14px !important;
+    max-width: 100% !important;
+  }
+}
+
+
 
 
 
