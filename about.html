@@ -788,13 +788,13 @@
   </div>
 </footer>
 
-<script src="script.js?v=29"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="script.js?v=29"></script>
 <script>
 var cur=document.getElementById('cur'),cur2=document.getElementById('cur2'),mx=0,my=0,cx=0,cy=0;
-document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-function animCur(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;cur2.style.left=cx+'px';cur2.style.top=cy+'px';requestAnimationFrame(animCur)}animCur();
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;if(cur){cur.style.left=mx+'px';cur.style.top=my+'px'}});
+function animCur(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;if(cur2){cur2.style.left=cx+'px';cur2.style.top=cy+'px'}requestAnimationFrame(animCur)}animCur();
 document.querySelectorAll('a,button,.av-card').forEach(function(el){
   el.addEventListener('mouseenter',function(){document.body.classList.add('hov')});
   el.addEventListener('mouseleave',function(){document.body.classList.remove('hov')});
