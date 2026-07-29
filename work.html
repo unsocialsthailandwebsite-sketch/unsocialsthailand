@@ -2,7 +2,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Client Case Studies &amp; Marketing Results | Unsocials Thailand</title>
 <meta name="description" content="Explore our case studies in Pattaya and Bangkok. Learn how we drive direct bookings, ROAS, and lead generation for Alexa Beach Club, Elysium Pattaya, and Hotel Skyview.">
 
@@ -508,11 +508,15 @@ window.addEventListener('scroll',function(){
   document.getElementById('nav').classList.toggle('compact',window.scrollY>80);
 });
 
-// Lenis smooth scroll
-const lenis=new Lenis({duration:1.2,easing:(t)=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
-gsap.ticker.add((time)=>{lenis.raf(time*1000)});
-gsap.ticker.lagSmoothing(0);
-lenis.on('scroll',ScrollTrigger.update);
+// Lenis smooth scroll (Desktop only)
+const lenis = (window.innerWidth > 900 && !('ontouchstart' in window && navigator.maxTouchPoints > 0))
+  ? new Lenis({duration:1.2,easing:(t)=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,smoothTouch:false})
+  : null;
+if (lenis) {
+  gsap.ticker.add((time)=>{lenis.raf(time*1000)});
+  gsap.ticker.lagSmoothing(0);
+  lenis.on('scroll',ScrollTrigger.update);
+}
 
 gsap.registerPlugin(ScrollTrigger);
 

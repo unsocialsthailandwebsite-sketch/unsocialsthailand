@@ -15,7 +15,7 @@
 })();
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Digital Marketing Services | Unsocials Thailand</title>
 <meta name="description" content="Performance marketing, social media management, content production, AI creative automation, CGI &amp; 3D, AI film production, and brand strategy in Bangkok, Thailand. Nine disciplines. One obsession. We make your brand inevitable.">
 
@@ -1951,7 +1951,11 @@ mm.add("(min-width: 901px)", function() {
         const navEl = document.getElementById('nav');
         const navH = navEl ? navEl.offsetHeight : 75;
         const targetY = cards[idx].offsetTop + deck.offsetTop;
-        lenis.scrollTo(targetY - navH, { duration: 1.0, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+        if (lenis) {
+          lenis.scrollTo(targetY - navH, { duration: 1.0, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+        } else {
+          window.scrollTo({ top: targetY - navH, behavior: 'smooth' });
+        }
       }
     });
   });
@@ -2136,7 +2140,11 @@ function handleHashNavigation() {
           const navEl = document.getElementById('nav');
           const navH = navEl ? navEl.offsetHeight : 75;
           const targetY = targetCard.offsetTop + deck.offsetTop;
-          lenis.scrollTo(targetY - navH, { duration: 1.2 });
+          if (lenis) {
+            lenis.scrollTo(targetY - navH, { duration: 1.2 });
+          } else {
+            window.scrollTo({ top: targetY - navH, behavior: 'smooth' });
+          }
         }
       }, 300);
     }

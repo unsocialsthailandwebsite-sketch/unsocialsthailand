@@ -2,7 +2,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Insights &amp; Articles — UNSOCIALS Thailand</title>
 <meta name="description" content="Read digital marketing insights, hotel OTA reduction strategies, and AI creative technology breakthroughs in Pattaya, Thailand.">
 
@@ -400,7 +400,7 @@ nav{background:rgba(4,4,4,.95)}
   <div class="blog-card" onclick="openBlog('ai-content')">
     <div class="bc-img-w">
       <img src="assets/showcase/2.mp4" style="display:none;" alt="AI Content" class="bc-img" loading="lazy" decoding="async"> <!-- fallback if video doesn't play -->
-      <video src="assets/showcase/2.mp4" autoplay="" loop="" muted="" playsinline="" class="bc-img" style="object-fit:cover;height:100%;width:100%" preload="none"></video>
+      <video src="assets/showcase/2.mp4" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" class="bc-img" style="object-fit:cover;height:100%;width:100%" preload="metadata"></video>
     </div>
     <div class="bc-content">
       <div class="bc-meta" data-th="เทคโนโลยี AI ครีเอทีฟ">AI Technology</div>
@@ -529,11 +529,15 @@ window.addEventListener('scroll',function(){
   document.getElementById('nav').classList.toggle('compact',window.scrollY>80);
 });
 
-// Lenis smooth scroll
-const lenis=new Lenis({duration:1.2,easing:(t)=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
-gsap.ticker.add((time)=>{lenis.raf(time*1000)});
-gsap.ticker.lagSmoothing(0);
-lenis.on('scroll',ScrollTrigger.update);
+// Lenis smooth scroll (Desktop only)
+const lenis = (window.innerWidth > 900 && !('ontouchstart' in window && navigator.maxTouchPoints > 0))
+  ? new Lenis({duration:1.2,easing:(t)=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,smoothTouch:false})
+  : null;
+if (lenis) {
+  gsap.ticker.add((time)=>{lenis.raf(time*1000)});
+  gsap.ticker.lagSmoothing(0);
+  lenis.on('scroll',ScrollTrigger.update);
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -695,7 +699,7 @@ function openBlog(id) {
   const container = document.getElementById('blog-container');
 
   overlay.style.display = 'flex';
-  lenis.stop(); // stop smooth scroll background
+  if (lenis) lenis.stop(); // stop smooth scroll background
   
   gsap.killTweensOf([overlay, container]);
   gsap.to(overlay, { opacity: 1, duration: 0.4, ease: 'power2.out' });
@@ -714,7 +718,7 @@ function closeBlog() {
     ease: 'power2.in',
     onComplete: () => {
       overlay.style.display = 'none';
-      lenis.start(); // resume smooth scroll
+      if (lenis) lenis.start(); // resume smooth scroll
     }
   });
 }

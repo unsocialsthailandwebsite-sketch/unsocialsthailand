@@ -9,7 +9,7 @@ const replacement = `<!-- FLOATING REEL TILES -->
     <div class="reel-tile" style="left:4%;top:18%;animation-duration:6s;animation-delay:0s;--tilt:-4deg">
       <a href="https://www.instagram.com/reel/DUU8F-BD1o5/" target="_blank" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
         <div class="reel-tile-inner">
-          <video class="reel-bg" autoplay loop muted playsinline preload="none" src="assets/reels/r1.mp4"></video>
+          <video class="reel-bg" autoplay loop muted playsinline webkit-playsinline preload="metadata" src="assets/reels/r1.mp4"></video>
           <div class="reel-overlay"></div>
           <div class="reel-play-dot"></div>
           <div class="reel-info">
@@ -23,7 +23,7 @@ const replacement = `<!-- FLOATING REEL TILES -->
     <div class="reel-tile" style="left:9%;top:54%;animation-duration:7.5s;animation-delay:-2s;--tilt:3deg">
       <a href="https://www.instagram.com/reel/DTvZmKLjFyg/" target="_blank" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
         <div class="reel-tile-inner">
-          <video class="reel-bg" autoplay loop muted playsinline preload="none" src="assets/reels/r2.mp4"></video>
+          <video class="reel-bg" autoplay loop muted playsinline webkit-playsinline preload="metadata" src="assets/reels/r2.mp4"></video>
           <div class="reel-overlay"></div>
           <div class="reel-play-dot" style="animation-delay:.5s"></div>
           <div class="reel-info">
@@ -37,7 +37,7 @@ const replacement = `<!-- FLOATING REEL TILES -->
     <div class="reel-tile" style="right:4%;top:15%;animation-duration:8s;animation-delay:-1s;--tilt:5deg">
       <a href="https://www.instagram.com/reel/DTxG5l2k7fJ/" target="_blank" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
         <div class="reel-tile-inner">
-          <video class="reel-bg" autoplay loop muted playsinline preload="none" src="assets/reels/r3.mp4"></video>
+          <video class="reel-bg" autoplay loop muted playsinline webkit-playsinline preload="metadata" src="assets/reels/r3.mp4"></video>
           <div class="reel-overlay"></div>
           <div class="reel-play-dot" style="animation-delay:.2s"></div>
           <div class="reel-info">
@@ -51,7 +51,7 @@ const replacement = `<!-- FLOATING REEL TILES -->
     <div class="reel-tile" style="right:9%;top:50%;animation-duration:6.5s;animation-delay:-3s;--tilt:-3deg">
       <a href="https://www.instagram.com/reel/DV6Lqg_ky5x/" target="_blank" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
         <div class="reel-tile-inner">
-          <video class="reel-bg" autoplay loop muted playsinline preload="none" src="assets/reels/r4.mp4"></video>
+          <video class="reel-bg" autoplay loop muted playsinline webkit-playsinline preload="metadata" src="assets/reels/r4.mp4"></video>
           <div class="reel-overlay"></div>
           <div class="reel-play-dot" style="animation-delay:.7s"></div>
           <div class="reel-info">

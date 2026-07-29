@@ -219,9 +219,9 @@ html { scroll-behavior: auto !important; }
       <div class="cs-grid-item cs-reveal-scale cs-d2"><img src="../assets/cases/elysium/img2.jpg" alt="Elysium campaign visual 2" loading="lazy" decoding="async"></div>
       <div class="cs-grid-item cs-reveal-scale cs-d3"><img src="../assets/cases/elysium/img3.jpg" alt="Elysium campaign visual 3" loading="lazy" decoding="async"></div>
       <div class="cs-grid-item cs-reveal-scale cs-d4"><img src="../assets/cases/elysium/img4.jpg" alt="Elysium campaign visual 4" loading="lazy" decoding="async"></div>
-      <div class="cs-grid-item cs-reveal-scale cs-d5"><video src="../assets/cases/elysium/vid1.mp4" autoplay loop muted playsinline preload="none"></video></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d5"><video src="../assets/cases/elysium/vid1.mp4" autoplay loop muted playsinline webkit-playsinline preload="metadata"></video></div>
       <div class="cs-grid-item cs-reveal-scale cs-d6"><img src="../assets/cases/elysium/img5.jpg" alt="Elysium campaign visual 5" loading="lazy" decoding="async"></div>
-      <div class="cs-grid-item cs-reveal-scale cs-d7"><video src="../assets/cases/elysium/vid2.mp4" autoplay loop muted playsinline preload="none"></video></div>
+      <div class="cs-grid-item cs-reveal-scale cs-d7"><video src="../assets/cases/elysium/vid2.mp4" autoplay loop muted playsinline webkit-playsinline preload="metadata"></video></div>
       <div class="cs-grid-item cs-reveal-scale cs-d8"><img src="../assets/cases/elysium/img6.jpg" alt="Elysium campaign visual 6" loading="lazy" decoding="async"></div>
       <div class="cs-grid-item cs-reveal-scale cs-d9"><img src="../assets/cases/elysium/img7.jpg" alt="Elysium campaign visual 7" loading="lazy" decoding="async"></div>
     </div>
@@ -260,23 +260,23 @@ function initReveals() {
 if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", initReveals); } else { initReveals(); }
 
 
-// Lenis smooth scroll
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smoothWheel: true
-});
-if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-  gsap.ticker.lagSmoothing(0);
-  lenis.on('scroll', ScrollTrigger.update);
-} else {
-  function raf(time) {
-    lenis.raf(time);
+// Lenis smooth scroll (Desktop only)
+const lenis = (window.innerWidth > 900 && !('ontouchstart' in window && navigator.maxTouchPoints > 0))
+  ? new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true, smoothTouch: false })
+  : null;
+if (lenis) {
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    lenis.on('scroll', ScrollTrigger.update);
+  } else {
+    function raf(time) {
+      if (lenis) lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
   }
-  requestAnimationFrame(raf);
 }
 
 

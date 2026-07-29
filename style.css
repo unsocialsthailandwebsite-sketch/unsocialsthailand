@@ -10,8 +10,8 @@
   --m2:#888;
   --border:rgba(255,255,255,0.06);
 }
-html{scroll-behavior:smooth;overflow-x:hidden;font-size:100%}
-body{background:var(--bg);color:var(--w);font-family:'Space Grotesk',sans-serif;cursor:none;overflow-x:hidden}
+html{scroll-behavior:auto;overflow-x:hidden;font-size:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--w);font-family:'Space Grotesk',sans-serif;cursor:none;overflow-x:hidden;width:100%;max-width:100vw}
 
 /* CURSOR */
 #cur{position:fixed;width:4px;height:4px;background:var(--ac);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:exclusion;transition:width .3s,height .3s,background .3s}
@@ -60,7 +60,10 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;o
   width: 56px;
   height: 56px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(88%) sepia(85%) saturate(1016%) hue-rotate(1deg) brightness(108%) contrast(101%);
+  background-color: var(--ac);
+  -webkit-mask: url('assets/favicon.png') no-repeat center / contain;
+  mask: url('assets/favicon.png') no-repeat center / contain;
+  filter: brightness(0) saturate(100%) invert(88%) sepia(85%) saturate(1016%) hue-rotate(6deg) brightness(108%) contrast(101%);
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
@@ -3229,26 +3232,39 @@ html[lang="th"] .h-big {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  aspect-ratio: 3/2 !important;
+  aspect-ratio: 16 / 10 !important;
 }
 .logo-grid-item .client-logo {
   height: auto !important;
   width: auto !important;
-  max-height: 65% !important;
-  max-width: 75% !important;
+  max-height: 80% !important;
+  max-width: 85% !important;
   object-fit: contain !important;
   filter: brightness(0) invert(1) !important;
-  margin: 0 !important;
+  margin: auto !important;
+  transform: none !important;
+  opacity: 0.85 !important;
+}
+
+@media (max-width: 768px) {
+  .logo-grid-item {
+    padding: 12px 14px !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  .logo-grid-item .client-logo {
+    max-height: 82% !important;
+    max-width: 88% !important;
+  }
 }
 
 @media (max-width: 480px) {
   .logo-grid-item {
-    padding: 10px !important;
-    aspect-ratio: 1.6 / 1 !important;
+    padding: 10px 12px !important;
+    aspect-ratio: 1.8 / 1 !important;
   }
   .logo-grid-item .client-logo {
-    max-height: 60% !important;
-    max-width: 70% !important;
+    max-height: 85% !important;
+    max-width: 90% !important;
   }
 }
 
@@ -3671,6 +3687,23 @@ video {
     font-size: clamp(18px, 5vw, 24px) !important;
     line-height: 1.1 !important;
     word-break: break-word !important;
+  }
+}
+
+/* iOS Safari & Touch Device Responsive Optimizations */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+  .marquee-w .client-logo {
+    height: 38px !important;
+    margin: 0 20px !important;
+    transform: none !important;
   }
 }
 

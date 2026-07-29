@@ -426,19 +426,44 @@ if(typeof gsap !== 'undefined') {
   }
 
   // 7. Global Video Optimization & Mobile Auto-Play Management
+  var setupVideo = function(v) {
+    v.muted = true;
+    v.defaultMuted = true;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    v.setAttribute('webkit-playsinline', '');
+    if (!v.getAttribute('preload') || v.getAttribute('preload') === 'none') {
+      v.setAttribute('preload', 'metadata');
+    }
+  };
+
+  var playVideoSafe = function(v) {
+    setupVideo(v);
+    if (v.readyState === 0) {
+      try { v.load(); } catch (err) {}
+    }
+    var promise = v.play();
+    if (promise && promise.catch) {
+      promise.catch(function() {
+        var retryPlay = function() {
+          setupVideo(v);
+          v.play().catch(function(){});
+        };
+        window.addEventListener('touchstart', retryPlay, { once: true, passive: true });
+        window.addEventListener('click', retryPlay, { once: true, passive: true });
+        window.addEventListener('scroll', retryPlay, { once: true, passive: true });
+      });
+    }
+  };
+
+  document.querySelectorAll('video').forEach(setupVideo);
+
   if ('IntersectionObserver' in window) {
     var vidObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         var v = e.target;
         if (e.isIntersecting) {
-          v.muted = true;
-          v.playsInline = true;
-          v.setAttribute('playsinline', '');
-          v.setAttribute('webkit-playsinline', '');
-          var playPromise = v.play();
-          if (playPromise && playPromise.catch) {
-            playPromise.catch(function(){});
-          }
+          playVideoSafe(v);
         } else {
           if (!v.paused) {
             v.pause();
@@ -449,10 +474,7 @@ if(typeof gsap !== 'undefined') {
 
     var observeAllVideos = function() {
       document.querySelectorAll('video').forEach(function(v) {
-        v.muted = true;
-        v.playsInline = true;
-        v.setAttribute('playsinline', '');
-        v.setAttribute('webkit-playsinline', '');
+        setupVideo(v);
         vidObs.observe(v);
       });
     };
@@ -465,6 +487,8 @@ if(typeof gsap !== 'undefined') {
       });
       mutObs.observe(document.body, { childList: true, subtree: true });
     }
+  } else {
+    document.querySelectorAll('video').forEach(playVideoSafe);
   }
 
 })();

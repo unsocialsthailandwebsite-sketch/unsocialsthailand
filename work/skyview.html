@@ -187,23 +187,23 @@ function initReveals() {
 if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", initReveals); } else { initReveals(); }
 
 
-// Lenis smooth scroll
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smoothWheel: true
-});
-if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-  gsap.ticker.lagSmoothing(0);
-  lenis.on('scroll', ScrollTrigger.update);
-} else {
-  function raf(time) {
-    lenis.raf(time);
+// Lenis smooth scroll (Desktop only)
+const lenis = (window.innerWidth > 900 && !('ontouchstart' in window && navigator.maxTouchPoints > 0))
+  ? new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true, smoothTouch: false })
+  : null;
+if (lenis) {
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    lenis.on('scroll', ScrollTrigger.update);
+  } else {
+    function raf(time) {
+      if (lenis) lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
   }
-  requestAnimationFrame(raf);
 }
 
 </script>
