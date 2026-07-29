@@ -3226,45 +3226,53 @@ html[lang="th"] .h-big {
 }
 
 .logo-grid-item {
-  padding: 16px !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 12px !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  aspect-ratio: 16 / 10 !important;
+  aspect-ratio: 1.35 / 1 !important;
 }
 .logo-grid-item .client-logo {
-  height: auto !important;
-  width: auto !important;
-  max-height: 80% !important;
-  max-width: 85% !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 80% !important;
+  max-height: 75% !important;
   object-fit: contain !important;
   filter: brightness(0) invert(1) !important;
   margin: auto !important;
   transform: none !important;
-  opacity: 0.85 !important;
+  opacity: 0.9 !important;
 }
 
 @media (max-width: 768px) {
   .logo-grid-item {
-    padding: 12px 14px !important;
-    aspect-ratio: 16 / 9 !important;
+    padding: 12px 10px !important;
+    aspect-ratio: 1.25 / 1 !important;
   }
   .logo-grid-item .client-logo {
-    max-height: 82% !important;
-    max-width: 88% !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 78% !important;
+    max-height: 72% !important;
+    object-fit: contain !important;
   }
 }
 
 @media (max-width: 480px) {
   .logo-grid-item {
-    padding: 10px 12px !important;
-    aspect-ratio: 1.8 / 1 !important;
+    padding: 10px 8px !important;
+    aspect-ratio: 1.2 / 1 !important;
   }
   .logo-grid-item .client-logo {
-    max-height: 85% !important;
-    max-width: 90% !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 76% !important;
+    max-height: 70% !important;
+    object-fit: contain !important;
   }
 }
 
