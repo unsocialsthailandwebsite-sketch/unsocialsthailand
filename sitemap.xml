@@ -2,58 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://unsocialsthailand.com/</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://unsocialsthailand.com/index.html</loc>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://unsocialsthailand.com/work.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/services.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/about.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/blog.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/contact.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/work/elysium.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/work/alexa.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/work/skyview.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/work/nomads.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/work/bamboo.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/work/gps.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://unsocialsthailand.com/work/huay-yai.html</loc>
+    <lastmod>2026-08-03</lastmod>
     <priority>0.70</priority>
   </url>
 </urlset>
