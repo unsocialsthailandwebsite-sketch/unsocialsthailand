@@ -1591,3 +1591,57 @@ function submitHomepageForm(event) {
     initLightbox();
   }
 })();
+
+// ─── LAZY LOAD BACKGROUND VIDEOS ───
+(function() {
+  function initLazyVideos() {
+    var lazyElements = Array.prototype.slice.call(document.querySelectorAll('.lazy-vid, video[data-src], source[data-src]'));
+    if (!lazyElements.length) return;
+
+    if ('IntersectionObserver' in window) {
+      var videoObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var target = entry.target;
+            var videoElement = target.tagName === 'VIDEO' ? target : target.parentElement;
+            
+            if (target.dataset.src) {
+              target.src = target.dataset.src;
+              delete target.dataset.src;
+            }
+            
+            var sources = videoElement.querySelectorAll('source[data-src]');
+            sources.forEach(function(srcEl) {
+              srcEl.src = srcEl.dataset.src;
+              delete srcEl.dataset.src;
+            });
+            
+            videoElement.load();
+            var playPromise = videoElement.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(function() {});
+            }
+            videoObserver.unobserve(target);
+          }
+        });
+      }, { rootMargin: '250px 0px' });
+
+      lazyElements.forEach(function(el) {
+        videoObserver.observe(el);
+      });
+    } else {
+      lazyElements.forEach(function(target) {
+        var videoElement = target.tagName === 'VIDEO' ? target : target.parentElement;
+        if (target.dataset.src) target.src = target.dataset.src;
+        videoElement.load();
+        videoElement.play().catch(function() {});
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLazyVideos);
+  } else {
+    initLazyVideos();
+  }
+})();

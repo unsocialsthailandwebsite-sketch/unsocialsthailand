@@ -239,7 +239,7 @@
     <div class="reel-tile" style="right:4%;top:15%;animation-duration:8s;animation-delay:-1s;--tilt:5deg">
       <a href="https://www.instagram.com/reel/DTxG5l2k7fJ/" target="_blank" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" rel="noopener noreferrer">
         <div class="reel-tile-inner">
-          <video class="reel-bg" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" preload="metadata" src="assets/reels/r3.mp4"></video>
+          <video class="reel-bg lazy-vid" loop="" muted="" playsinline="" webkit-playsinline="" preload="none" data-src="assets/reels/r3.mp4"></video>
           <div class="reel-overlay"></div>
           <div class="reel-play-dot" style="animation-delay:.2s"></div>
           <div class="reel-info">
@@ -253,7 +253,7 @@
     <div class="reel-tile" style="right:9%;top:50%;animation-duration:6.5s;animation-delay:-3s;--tilt:-3deg">
       <a href="https://www.instagram.com/reel/DV6Lqg_ky5x/" target="_blank" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" rel="noopener noreferrer">
         <div class="reel-tile-inner">
-          <video class="reel-bg" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" preload="metadata" src="assets/reels/r4.mp4"></video>
+          <video class="reel-bg lazy-vid" loop="" muted="" playsinline="" webkit-playsinline="" preload="none" data-src="assets/reels/r4.mp4"></video>
           <div class="reel-overlay"></div>
           <div class="reel-play-dot" style="animation-delay:.7s"></div>
           <div class="reel-info">
@@ -554,7 +554,7 @@
     </div>
     <div class="rv" style="position:relative; width: 100%; height: 100%; display:flex; justify-content:flex-end;">
       <div class="flush-vid-container">
-        <video src="assets/01.mp4" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" style="width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;" preload="metadata">
+        <video class="lazy-vid" data-src="assets/01.mp4" loop="" muted="" playsinline="" webkit-playsinline="" style="width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;" preload="none">
         </video>
       </div>
     </div>
@@ -637,7 +637,7 @@
 <section id="ai-showcase">
   <!-- The walking character background overlay wrapper for iOS Safari compatibility -->
   <div class="aic-bg-video-w">
-    <video src="assets/showcase/2.mp4" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" class="aic-bg-video" preload="metadata"></video>
+    <video class="aic-bg-video lazy-vid" data-src="assets/showcase/2.mp4" loop="" muted="" playsinline="" webkit-playsinline="" preload="none"></video>
   </div>
   
   <div class="aic-inner rv" style="position:relative; z-index:2;">
@@ -652,8 +652,8 @@
       <!-- Video 1 -->
       <div class="aic-card aic-card-full rv" style="transition-delay:.05s">
         <div class="aic-vid-w">
-          <video class="aic-vid" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" preload="metadata">
-            <source src="assets/showcase/ai-marketing.mp4" type="video/mp4">
+          <video class="aic-vid lazy-vid" loop="" muted="" playsinline="" webkit-playsinline="" preload="none">
+            <source data-src="assets/showcase/ai-marketing.mp4" type="video/mp4">
           </video>
           <div class="aic-overlay"></div>
           <div class="aic-tag" data-th="AI มาร์เก็ตติ้ง">AI Marketing</div>
@@ -667,8 +667,8 @@
       <!-- Video 2 -->
       <div class="aic-card rv" style="transition-delay:.12s">
         <div class="aic-vid-w">
-          <video class="aic-vid" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" preload="metadata">
-            <source src="assets/showcase/ai-social.mp4" type="video/mp4">
+          <video class="aic-vid lazy-vid" loop="" muted="" playsinline="" webkit-playsinline="" preload="none">
+            <source data-src="assets/showcase/ai-social.mp4" type="video/mp4">
           </video>
           <div class="aic-overlay"></div>
           <div class="aic-tag" data-th="AI โซเชียล">AI Social</div>
@@ -682,8 +682,8 @@
       <!-- Video 3 -->
       <div class="aic-card rv" style="transition-delay:.2s">
         <div class="aic-vid-w">
-          <video class="aic-vid" autoplay="" loop="" muted="" playsinline="" webkit-playsinline="" preload="metadata">
-            <source src="assets/showcase/ai-fashion.mp4" type="video/mp4">
+          <video class="aic-vid lazy-vid" loop="" muted="" playsinline="" webkit-playsinline="" preload="none">
+            <source data-src="assets/showcase/ai-fashion.mp4" type="video/mp4">
           </video>
           <div class="aic-overlay"></div>
           <div class="aic-tag" data-th="AI แฟชั่น">AI Fashion</div>
