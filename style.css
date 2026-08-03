@@ -42,8 +42,12 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;o
   width: 100%;
   height: 100%;
   object-fit: contain;
-  opacity: 0.12;
-  filter: grayscale(100%) brightness(0.5);
+  opacity: 0.2;
+  background-color: var(--ac);
+  -webkit-mask: url('assets/favicon.png') no-repeat center / contain;
+  mask: url('assets/favicon.png') no-repeat center / contain;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 .pre-icon-fill {
   position: absolute;
@@ -60,10 +64,11 @@ body::after{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;o
   width: 56px;
   height: 56px;
   object-fit: contain;
-  background-color: var(--ac);
+  background-color: var(--ac) !important;
   -webkit-mask: url('assets/favicon.png') no-repeat center / contain;
   mask: url('assets/favicon.png') no-repeat center / contain;
-  filter: brightness(0) saturate(100%) invert(88%) sepia(85%) saturate(1016%) hue-rotate(6deg) brightness(108%) contrast(101%);
+  -webkit-mask-size: contain;
+  mask-size: contain;
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
