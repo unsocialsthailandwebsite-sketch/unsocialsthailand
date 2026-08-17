@@ -3235,6 +3235,7 @@ html[lang="th"] .h-big {
 }
 
 .logo-grid-item {
+  position: relative !important;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 16px 12px !important;
@@ -3251,22 +3252,25 @@ html[lang="th"] .h-big {
 }
 
 .logo-grid-item .client-logo {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 75% !important;
-  max-height: 68% !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 75% !important;
+  height: 68% !important;
+  max-width: none !important;
+  max-height: none !important;
   object-fit: contain !important;
   -webkit-object-fit: contain !important;
   object-position: center !important;
   -webkit-object-position: center !important;
   filter: brightness(0) invert(1) !important;
   -webkit-filter: brightness(0) invert(1) !important;
-  margin: auto !important;
+  margin: 0 !important;
   opacity: 0.9 !important;
   min-width: 0 !important;
   min-height: 0 !important;
-  transform: none !important;
-  -webkit-transform: none !important;
+  transform: translate(-50%, -50%) !important;
+  -webkit-transform: translate(-50%, -50%) !important;
   transition: none !important;
   -webkit-transition: none !important;
   animation: none !important;
@@ -3279,8 +3283,8 @@ html[lang="th"] .h-big {
     aspect-ratio: 1.25 / 1 !important;
   }
   .logo-grid-item .client-logo {
-    max-width: 72% !important;
-    max-height: 65% !important;
+    width: 72% !important;
+    height: 65% !important;
   }
 }
 
@@ -3290,8 +3294,8 @@ html[lang="th"] .h-big {
     aspect-ratio: 1.2 / 1 !important;
   }
   .logo-grid-item .client-logo {
-    max-width: 68% !important;
-    max-height: 62% !important;
+    width: 68% !important;
+    height: 62% !important;
   }
 }
 
