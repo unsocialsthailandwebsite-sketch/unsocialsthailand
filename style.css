@@ -3235,10 +3235,9 @@ html[lang="th"] .h-big {
 }
 
 .logo-grid-item {
-  position: relative !important;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 16px 12px !important;
+  padding: 11.85% 12.5% !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
   display: flex !important;
@@ -3252,13 +3251,10 @@ html[lang="th"] .h-big {
 }
 
 .logo-grid-item .client-logo {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  width: 75% !important;
-  height: 68% !important;
-  max-width: none !important;
-  max-height: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   object-fit: contain !important;
   -webkit-object-fit: contain !important;
   object-position: center !important;
@@ -3269,8 +3265,6 @@ html[lang="th"] .h-big {
   opacity: 0.9 !important;
   min-width: 0 !important;
   min-height: 0 !important;
-  transform: translate(-50%, -50%) !important;
-  -webkit-transform: translate(-50%, -50%) !important;
   transition: none !important;
   -webkit-transition: none !important;
   animation: none !important;
@@ -3279,23 +3273,15 @@ html[lang="th"] .h-big {
 
 @media (max-width: 768px) {
   .logo-grid-item {
-    padding: 12px 8px !important;
+    padding: 14% !important;
     aspect-ratio: 1.25 / 1 !important;
-  }
-  .logo-grid-item .client-logo {
-    width: 72% !important;
-    height: 65% !important;
   }
 }
 
 @media (max-width: 480px) {
   .logo-grid-item {
-    padding: 10px 6px !important;
+    padding: 15.8% 16% !important;
     aspect-ratio: 1.2 / 1 !important;
-  }
-  .logo-grid-item .client-logo {
-    width: 68% !important;
-    height: 62% !important;
   }
 }
 
