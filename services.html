@@ -298,7 +298,9 @@ nav{background:rgba(4,4,4,.95)}
   gap: 40px;
   flex-wrap: wrap;
   position: relative;
-  z-index: 10;
+  /* Must sit above .svc-global-menu (fixed, z-index:200) so the floating
+     service menu is covered once this band scrolls over it. */
+  z-index: 300;
 }
 .sbc-h {
   font-family: 'Syne', sans-serif;
