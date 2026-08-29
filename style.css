@@ -3269,6 +3269,15 @@ html[lang="th"] .h-big {
   -webkit-transition: none !important;
   animation: none !important;
   -webkit-animation: none !important;
+  /* reset the global .client-logo marquee scale so grid logos are not clipped */
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+.logo-grid-item .client-logo:hover {
+  transform: none !important;
+  -webkit-transform: none !important;
+  opacity: 1 !important;
 }
 
 @media (max-width: 768px) {
