@@ -499,7 +499,7 @@ const caseData = {
     eye: '5-Star Hotel · Pattaya Prathumnak Hill · End-to-End Brand Transformation',
     title: 'Elysium Pattaya',
     tags: ['Performance Marketing', 'Social Media Management', 'Content Production', 'AI Creative Automation', 'Brand Strategy'],
-    media: ["assets/cases/elysium/img1.png","assets/cases/elysium/img2.jpg","assets/cases/elysium/img3.jpg","assets/cases/elysium/img4.jpg","assets/cases/elysium/img5.jpg","assets/cases/elysium/img6.jpg","assets/cases/elysium/img7.jpg","assets/cases/elysium/vid1.mp4","assets/cases/elysium/vid2.mp4","assets/cases/elysium/vid3.mp4"],
+    media: ["assets/cases/elysium/img1.webp","assets/cases/elysium/img2.jpg","assets/cases/elysium/img3.jpg","assets/cases/elysium/img4.jpg","assets/cases/elysium/img5.jpg","assets/cases/elysium/img6.jpg","assets/cases/elysium/img7.jpg","assets/cases/elysium/vid1.mp4","assets/cases/elysium/vid2.mp4","assets/cases/elysium/vid3.mp4"],
     problemHtml: `<div class="cs-sec-title">A 5-star hotel that looked like a 2-star on social.</div>
 <p class="cs-p">Elysium Pattaya had everything a luxury hotel needs to succeed — a stunning rooftop infinity pool, breathtaking Gulf of Thailand views, a prime location on Prathumnak Hill, and a product that genuinely deserved to be Pattaya's most talked-about boutique property.</p>
 <p class="cs-p">What they didn't have was visibility. No direct booking system. No social presence worth speaking of. Zero website revenue. Every guest that found them came through OTAs — Agoda, Booking.com, Expedia — each taking a commission slice that was bleeding the business dry.</p>
@@ -605,7 +605,7 @@ const caseData = {
     eye: 'Beach Club · Krabi, Thailand · Daily Social Engine + Multi-Format Visibility',
     title: 'Bamboo Beach Club',
     tags: ['Social Media Management', 'Content Production', 'AI Creative Automation', 'Brand Strategy'],
-    media: ["assets/cases/bamboo/img1.png","assets/cases/bamboo/img2.png","assets/cases/bamboo/vid1.mp4","assets/cases/bamboo/vid2.mp4","assets/cases/bamboo/vid3.mp4","assets/cases/bamboo/vid4.mp4","assets/cases/bamboo/vid5.mp4","assets/cases/bamboo/vid6.mp4"],
+    media: ["assets/cases/bamboo/img1.webp","assets/cases/bamboo/img2.webp","assets/cases/bamboo/vid1.mp4","assets/cases/bamboo/vid2.mp4","assets/cases/bamboo/vid3.mp4","assets/cases/bamboo/vid4.mp4","assets/cases/bamboo/vid5.mp4","assets/cases/bamboo/vid6.mp4"],
     problemHtml: `<div class="cs-sec-title">An incredible beach club venue operating in a digital vacuum.</div>
 <p class="cs-p">Bamboo Beach Club in Krabi is one of the island's most vibrant venues. While word of mouth was working locally, their social media presence was a complete afterthought. Great event nights were happening with live fire shows and foam parties, but the right people — tourists planning Krabi trips or actively looking for nightly entertainment — weren't seeing them.</p>
 <p class="cs-p">With an inconsistent posting schedule and lack of format diversity, Bamboo sat invisible behind competitors who posted daily to capture the high-value tourist market.</p>`,
@@ -676,14 +676,14 @@ function openCase(id) {
   document.documentElement.style.setProperty('--case-accent-rgb', accent.rgb);
 
   const coverMap = {
-    elysium: 'assets/elysium-cover.png',
-    alexa: 'assets/alexa-cover.png',
-    skyview: 'assets/skyview-cover.png',
-    nomads: 'assets/nomads-cover.png',
-    bamboo: 'assets/bamboo-cover.png',
+    elysium: 'assets/elysium-cover.webp',
+    alexa: 'assets/alexa-cover.webp',
+    skyview: 'assets/skyview-cover.webp',
+    nomads: 'assets/nomads-cover.webp',
+    bamboo: 'assets/bamboo-cover.webp',
     gps: 'assets/gps-cover.jpg'
   };
-  const coverImg = coverMap[id] || 'assets/elysium-cover.png';
+  const coverImg = coverMap[id] || 'assets/elysium-cover.webp';
   
   let tagsHtml = data.tags.map(t => `<span class="cs-tag">${t}</span>`).join('');
   
@@ -893,9 +893,9 @@ const serviceData = {
     ],
     pitchHtml: '<p class="svc-text">The internet is an auction, and most brands are bidding blindly. We operate differently. We use data to understand exactly what a customer is worth, and we build <strong>performance marketing engines</strong> designed to acquire them for less.</p><p class="svc-text">No vanity metrics. No excuses. Just a transparent, aggressive pursuit of ROI.</p>',
     works: [
-      { media: 'assets/elysium-cover.png', tag: 'Performance Funnel', title: 'Elysium Pattaya — Direct Bookings' },
+      { media: 'assets/elysium-cover.webp', tag: 'Performance Funnel', title: 'Elysium Pattaya — Direct Bookings' },
       { media: 'assets/showcase/ai-marketing.mp4', tag: 'Paid Acquisition', title: 'AI Lead Gen Engine' },
-      { media: 'assets/skyview-cover.png', tag: 'Paid Social', title: 'Skyview Bangkok — Premium Scaling' }
+      { media: 'assets/skyview-cover.webp', tag: 'Paid Social', title: 'Skyview Bangkok — Premium Scaling' }
     ]
   },
   social: {
@@ -916,8 +916,8 @@ const serviceData = {
     ],
     pitchHtml: '<p class="svc-text">In a world where attention is the only currency that matters, a mediocre social presence is brand suicide. We treat your social channels as <strong>premium editorial publications</strong>.</p><p class="svc-text">We don\'t just post; we curate. We dictate the narrative, engage with intent, and ensure that every pixel represents the highest echelon of your market.</p>',
     works: [
-      { media: 'assets/bamboo-cover.png', tag: 'Content & Curation', title: 'Bamboo Beach Club — Daily Social' },
-      { media: 'assets/alexa-cover.png', tag: 'Community Curation', title: 'Alexa Beach Club — 2.6M Reach' },
+      { media: 'assets/bamboo-cover.webp', tag: 'Content & Curation', title: 'Bamboo Beach Club — Daily Social' },
+      { media: 'assets/alexa-cover.webp', tag: 'Community Curation', title: 'Alexa Beach Club — 2.6M Reach' },
       { media: 'assets/showcase/ai-social.mp4', tag: 'Content Automation', title: 'AI-Generated Social Feed' }
     ]
   },
@@ -985,7 +985,7 @@ const serviceData = {
     ],
     pitchHtml: '<p class="svc-text">A strong brand is the ultimate cheat code for customer acquisition. When they know who you are and what you stand for, the ads become cheaper and the conversions become easier.</p><p class="svc-text">We strip your business down to its studs and rebuild it as a <strong>category king</strong>. We find your unique angle and we amplify it until the rest of the market sounds like an echo.</p>',
     works: [
-      { media: 'assets/nomads-cover.png', tag: 'Brand Positioning', title: 'Nomads Hostel Asia — Category Design' },
+      { media: 'assets/nomads-cover.webp', tag: 'Brand Positioning', title: 'Nomads Hostel Asia — Category Design' },
       { media: 'assets/reels/r4.mp4', tag: 'Brand Storytelling', title: 'Unsocials Global — Global Identity' },
       { media: 'assets/gps-cover.jpg', tag: 'Content Blueprint', title: 'GPS Gems — Educational Pillar' }
     ]
@@ -1016,15 +1016,15 @@ function openService(id, fromPopState = false) {
 
   let mediaHtml = '';
   if (id === 'performance') {
-    mediaHtml = `<img src="assets/elysium-cover.png" alt="Elysium Pattaya">`;
+    mediaHtml = `<img src="assets/elysium-cover.webp" alt="Elysium Pattaya">`;
   } else if (id === 'social') {
-    mediaHtml = `<img src="assets/bamboo-cover.png" alt="Bamboo Beach Club">`;
+    mediaHtml = `<img src="assets/bamboo-cover.webp" alt="Bamboo Beach Club">`;
   } else if (id === 'content') {
     mediaHtml = `<video src="assets/reels/r2.mp4" autoplay loop muted playsinline></video>`;
   } else if (id === 'ai') {
     mediaHtml = `<video src="assets/showcase/2.mp4" autoplay loop muted playsinline></video>`;
   } else if (id === 'strategy') {
-    mediaHtml = `<img src="assets/nomads-cover.png" alt="Nomads Hostel Asia">`;
+    mediaHtml = `<img src="assets/nomads-cover.webp" alt="Nomads Hostel Asia">`;
   }
 
   // Ensure pitchHtml uses bento-text instead of svc-text
