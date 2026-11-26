@@ -1,1 +1,27 @@
+# Keep build/helper files off the public site
+/node_modules/*  /  301
+/.agents/*  /  301
+/copy_reels.py  /  301
+/extract_clients.py  /  301
+/fetch_drive.py  /  301
+/read_docx.py  /  301
+/replace_icons.py  /  301
+/resolve_conflicts.py  /  301
+/copy_reels.js  /  301
+/fix_vid.js  /  301
+/inject_whatsapp.js  /  301
+/parse_audit.js  /  301
+/replace_icons.js  /  301
+/replace_numbers.js  /  301
+/restore_reels.js  /  301
+/serve.js  /  301
+/split.js  /  301
+/update_flush.js  /  301
+/update_footer_hashes.js  /  301
+/update_links.js  /  301
+/update_services.js  /  301
+/update_services_script.js  /  301
+/package.json  /  301
+/package-lock.json  /  301
+
 /*.html  /:splat  301
